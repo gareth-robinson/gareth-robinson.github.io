@@ -16,7 +16,14 @@
 			height: calc(100% - 70px);
 		}
 	</style>
-  <head>
+	<script>
+	    function acknowledge() {
+		console.log("FIRING ACKNOWLEDGE");
+                document.querySelector("iframe").contentWindow.postMessage("HIYA", window.location.origin);
+	    }
+        </script>
+  </head>
+  <body onload="acknowledge()">
     <!--iframe src="https://cxsuite-qa.foresee.com/client/dashboards/1282/"/-->
     <iframe src="http://localhost:3000/client/dashboards/1282/"/>
   </body>
